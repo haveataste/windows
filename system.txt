@@ -22,3 +22,5 @@ https://support.microsoft.com/zh-cn/windows/%E4%B8%8B%E8%BD%BD-internet-explorer
 https://dotnet.microsoft.com/download/dotnet-framework        
 
 查看应用程序的启动参数：Win+R cmd --> wmic --> process
+打开控制面板：Win+R control
+查询或清除DNS：ipconfig /displaydns | /flushdns
