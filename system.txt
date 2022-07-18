@@ -24,3 +24,6 @@ https://dotnet.microsoft.com/download/dotnet-framework
 查看应用程序的启动参数：Win+R cmd --> wmic --> process
 打开控制面板：Win+R control
 查询或清除DNS：ipconfig /displaydns | /flushdns
+
+VScode按'!+Tab'无法自动生成HTML模板问题：
+使用新的命令：以前是!+Tab，现在把叹号改成html:5，这个只有在最新版的VSCode中才有的更改，以前的版本还是继续使用!+Tab哦！
