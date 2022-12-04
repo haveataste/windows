@@ -3,3 +3,17 @@
 .\adb.exe pull /sdcard/DCIM/Screenshots/jt.png .
 .\adb.exe shell input tap 208 386
 .\adb.exe kill-server
+
+C:\Users\pc\Downloads\php-7.2.0-Win32-VC15-x86>adb devices
+List of devices attached
+emulator-5554   device
+612QKBQC26LS6   device
+
+adb shell screencap /sdcard/screen.png
+adb pull /sdcard/screen.png
+adb shell
+shell@M5s:/ $ ip -f inet addr show wlan0
+ip -f inet addr show wlan0
+20: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    inet 192.168.0.102/24 brd 192.168.0.255 scope global wlan0
+       valid_lft forever preferred_lft forever
