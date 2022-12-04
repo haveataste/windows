@@ -27,3 +27,132 @@ https://dotnet.microsoft.com/download/dotnet-framework
 
 VScode按'!+Tab'无法自动生成HTML模板问题：
 使用新的命令：以前是!+Tab，现在把叹号改成html:5，这个只有在最新版的VSCode中才有的更改，以前的版本还是继续使用!+Tab哦！
+
+什么是REST API?
+一种软件架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。
+原则条件：
+REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。
+Web 应用程序最重要的 REST 原则是，客户端和服务器之间的交互在请求之间是无状态的。从客户端到服务器的每个请求都必须包含理解请求所必需的信息。如果服务器在请求之间的任何时间点重启，客户端不会得到通知。此外，无状态请求可以由任何可用服务器回答，这十分适合云计算之类的环境。客户端可以缓存数据以改进性能。
+定义规则：
+REST中的资源所指的不是数据，而是数据和表现形式的组合，比如“最新访问的10位会员”和“最活跃的10位会员”在数据上可能有重叠或者完全相同，而由于他们的表现形式不同，所以被归为不同的资源，这也就是为什么REST的全名是Representational State Transfer的原因。
+资源标识符就是URI(Uniform Resource Identifier)，不管是图片，Word还是视频文件，甚至只是一种虚拟的服务，也不管你是XML（标准通用标记语言下的一个子集）格式、txt文件格式还是其它文件格式，全部通过 URI对资源进行唯一的标识。
+
+%u编码
+Escape/Unescape加密解码/编码解码,又叫%u编码，从以往经验看编码字符串出现有"u"，它是unicode编码，那么Escape编码采用是那一种unicode实现形式呢？
+其实是UTF-16BE模式。这样一来问题非常简了。Escape编码/加密,就是字符对应UTF-16 16进制表示方式前面加%u。
+Unescape解码/解密，就是去掉"%u"后，将16进制字符还原后，由utf-16转码到自己目标字符。如：字符“中”，UTF-16BE是：“6d93”，因此Escape是“%u6d93”，反之也一样！
+因为目前%字符，常用作URL编码，所以%u这样编码已经逐渐被废弃了！
+escape(str);
+unescape(str);
+
+URL编码(URL encoding)，也称作百分号编码(Percent-encoding)， 是特定上下文的统一资源定位符 (URL)的编码机制。
+适用于统一资源标识符(URI)的编码，也用于为"application/x-www-form-urlencoded" MIME准备数据， 因为它用于通过HTTP的请求操作(request)提交HTML表单数据。
+将需要转码的字符转为16进制，然后从右到左，取4位(不足4位直接处理)，每2位做一位，前面加上%，编码成%XY格式。
+空格ASCII码是32，对应16进制是20，那么urlencode编码结果是:%20,但在新标准中空格对应的是+,见RFC-1738
+中ASCII码是-10544，对应的16进制是FFFFFFFFFFFFD6D0，那么urlencode编码结果是:%D6%D0
+encodeURI(str);
+>encodeURI('你很棒')
+>"%E4%BD%A0%E5%BE%88%E6%A3%92"
+decodeURI(str);
+
+base64编码
+magnet:?xt=urn:btih: 转迅雷、快车、QQ旋风地址
+thunderurl = "thunder://" + encode64("AA" + str + "ZZ");
+flashgeturl = "flashget://" + encode64("[flashget]" + str + "[flashget]") + "&2018";
+qqurl = "qqdl://" + encode64(str);
+
+joyent
+CTO ?
+The CTO is the Chief Technology Officer, and in a startup, will likely be the technical co-founder
+The CTO establishes the vision and culture
+The CTO must be as technical as required to validate the vision and the culture
+Beyond this, the CTO is (or should be) largely outward facing - the CTO should understand the relationship between the technology and the larger world
+As a company grows and expands, the CTO will be at a crossroads : become the VP of Engineering and hire a CTO, or remain the CTO and hire a VP of Engineering
+
+特殊文件名其实是系统设备名，这是Windows 系统保留的文件名，普通方法无法访问，主要有：lpt,aux,com1-9,prn,nul,con，例如：lpt.txt、com1.txt 、aux.txt，aux.pasp，aux.php等。
+
+按住Shift并右击鼠标，选择在当前目录打开命令窗口
+
+C:\Windows\System32\drivers\etc\hosts
+
+#什么是 GPU 加速计算？
+GPU 加速计算是指同时利用图形处理器 (GPU) 和 CPU，加快科学、分析、工程、消费和企业应用程序的运行速度。GPU 加速器于 2007 年由 NVIDIA? 率先推出，现已在世界各地为政府实验室、高校、公司以及中小型企业的高能效数据中心提供支持。GPU 能够使从汽车、手机和平板电脑到无人机和机器人等平台的应用程序加速运行.
+#GPU 如何加快软件应用程序的运行速度
+GPU 加速计算可以提供非凡的应用程序性能，能将应用程序计算密集部分的工作负载转移到 GPU，同时仍由 CPU 运行其余程序代码。从用户的角度来看，应用程序的运行速度明显加快.
+#GPU 与 CPU 性能比较
+理解 GPU 和 CPU 之间区别的一种简单方式是比较它们如何处理任务。CPU 由专为顺序串行处理而优化的几个核心组成，而 GPU 则拥有一个由数以千计的更小、更高效的核心（专为同时处理多重任务而设计）组成的大规模并行计算架构。
+
+net     socket
+FTP     21
+SFTP	22      安全文件传输协议
+TELNET	23
+SMTP	25
+DNS     53
+TFTP 	69      简单文件传输协议
+HTTP	80/8080
+SNMP	161
+HTTPS	443
+RIP     520
+SSL 安全套接层  TLS 传输层安全
+
+SIM USIM（Micro-SIM） NANO-SIM
+
+cache 是为了弥补高速设备和低速设备的鸿沟而引入的中间层，最终起到**加快访问速度**的作用。而 buffer 的主要目的进行流量整形，把突发的大数量较小规模的 I/O 整理成平稳的小数量较大规模的 I/O，以**减少响应次数**（比如从网上下电影，你不能下一点点数据就写一下硬盘，而是积攒一定量的数据以后一整块一起写，不然硬盘都要被你玩坏了）。
+
+公共DNS
+114DNS  114.114.114.114    114.114.115.115
+谷歌DNS 8.8.8.8    8.8.4.4
+腾讯DNS 119.29.29.29
+阿里DNS 223.5.5.5    223.6.6.6
+百度DNS 180.76.76.76
+中华电信 168.95.1.1    168.95.192.1
+港服的    202.238.95.24    202.238.95.26
+棒子的    168.126.63.1    168.126.63.2
+OpenDNS 208.67.220.220    208.67.222.222
+ping 114.114.114.114
+ping 180.76.76.76
+ping 223.5.5.5
+ping 119.29.29.29
+ping 8.8.8.8
+
+NTP是用来使计算机时间同步化的一种协议，全称是Network Time Protocol。它可以在大规模的设备范围内同步矫正时间到几ms级别的精度，在网络稳定的局域网内，精度甚至可以达到微秒级别。 今天NTP协议已经发展到V4版本，V1版本在1988年6月推出，主要RFC为RFC-1059；V2版本在1989年9月推出，主要RFC为RFC-1119；V3版本在1992年3月问世，主要RFC为RFC-1305；今天我们大规模使用的V4版本的NTP，还没有正式的RFC出版，但是简单的协议内容，在RFC2030里已有描述。
+公共时间服务
+阿里OPS团队为互联网提供了公共的时间同步服务，服务域名为：time.aliyun.com
+
+winsock是Windows网络编程接口，winsock工作在应用层，它提供与底层传输协议无关的高层数据传输编程接口 netsh winsock reset 是把它恢复到默认状态。
+netsh winsock reset命令，作用是重置 Winsock 目录。
+如果一台机器上的Winsock协议配置有问题的话将会导致网络连接等问题，就需要用netsh winsock reset命令来重置Winsock目录借以恢复网络。
+这个命令可以重新初始化网络环境，以解决由于软件冲突、病毒原因造成的参数错误问题。 netsh是一个能够通过命令行操作几乎所有网络相关设置的接口，比如设置IP，DNS，网卡，无线网络等，Winsock是系统内部目录，Winsock是Windows网络编程接口，winsock工作在应用层，它提供与底层传输协议无关的高层数据传输编程接口，reset是对Winsock的重置操作。当执行完winsock的命令重启计算机后，需要重新配置IP。
+
+CSV即Comma Separate Values，这种文件格式经常用来作为不同程序之间的数据交互的格式。 
+具体文件格式：
+每条记录占一行
+以逗号为分隔符
+逗号前后的空格会被忽略
+字段中包含有逗号，该字段必须用双引号括起来
+字段中包含有换行符，该字段必须用双引号括起来
+字段前后包含有空格，该字段必须用双引号括起来
+字段中的双引号用两个双引号表示
+字段中如果有双引号，该字段必须用双引号括起来
+第一条记录，可以是字段名
+
+notepad++
+折叠所有层次 Alt+0
+展开所有层次 Alt+Shift+0
+折叠当前层次 Ctrl+Alt+F
+展开当前层次 Ctrl+Alt+Shift+F
+变大写 Ctrl+Shift+u
+变小写 Ctrl+u
+
+SOCKS5 是一个代理协议，它在使用TCP/IP协议通讯的前端机器和服务器机器之间扮演一个中介角色，使得内部网中的前端机器变得能够访问Internet网中的服务器，或者使通讯更加安全。SOCKS5 服务器通过将前端发来的请求转发给真正的目标服务器， 模拟了一个前端的行为。在这里，前端和SOCKS5之间也是通过TCP/IP协议进行通讯，前端将原本要发送给真正服务器的请求发送给SOCKS5服务器，然后SOCKS5服务器将请求转发给真正的服务器。与SOCKS5协议不同，HTTP代理是通过HTTP协议进行的，HTTP代理服务器软件了解通讯包的内部结构，在转发过程中还要对通讯进行某种程度的修改和转换。和HTTP代理协议不同，SOCKS5实际上是一个传输层的代理协议。我们可以想象，如果每个具体的应用层协议都要设计对应的代理协议表达办法，一个特定的代理服务器无论如何也支持不过来那么多新出现的协议。因此，可以说SOCKS5的出现缓解了各种具体协议需要专门设计代理协议的困难局面。不过，并不是凡是使用基于TCP/IP协议的应用协议的软件，都可以无条件地透过SOCKS5服务器进行通讯，还要求前端软件本身具有SOCKS5的接口，才能利用SOCKS5代理服务器。
+
+chrome浏览器基于开源引擎WebKit、Blink，其中包含谷歌Gears。
+·Chrome提供了浏览器扩展框架，可以制作与Adobe-AIR类似的混合应用。
+·包含V8 Javascript虚拟机，这个多线程的虚拟机可以加速Javascript的执行。
+
+Chromium是一个由Google主导开发的网页浏览器。以BSD许可证等多重自由版权发行并开放源代码。Chromium的开发可能早自2006年即开始，在架构上使用了Apple发展出来的WebKit排版引擎、Safari的部份源代码与Firefox的成果，并采用Google独家开发出的V8引擎以提升解译JavaScript的效率。
+Chromium是Google为发展自家的浏览器GoogleChrome而开启的计划，所以Chromium相当于Chrome的工程版或称实验版（尽管Chrome自身也有β版阶段），新功能会率先在Chromium上实现，待验证后才会应用在Chrome上，故Chrome的功能会相对落后但较稳定。Chromium的更新速度很快,每隔数小时即有新的开发版本发布，而且可以免安装，下载zip封装版后解压缩即可使用（Windows下也有安装版）。Chrome虽然理论上也可以免安装，但Google仅提供安装版。
+
+webkit分为webcore和javascriptcore,v8属于其中的javascriptcore,google是没有用webkit的javascriptcore的，但是用了webcore
+
+四大渲染引擎(浏览器内核)，分别是：微软IE浏览器内核Trident、谷歌Chrome浏览器内核Blink、苹果Safari内核Webkit、火狐浏览器内核Gecko。对于用户来说，渲染引擎的差异化意味着他们在使用不同浏览器打开同一网页时将得到不同的结果——在移动设备上尤其如此。
