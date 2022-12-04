@@ -1,0 +1,33 @@
+--显示当前数据库名
+select db_name() as databasename;
+--显示用户名
+select current_user;
+select user;
+
+1.获取所有用户名:
+SELECT name FROM Sysusers where status='2' and islogin='1'
+islogin='1'表示帐户       islogin='0'表示角色
+status='2'表示用户帐户    status='0'表示系统帐户
+2.获取所有数据库名:
+SELECT Name FROM Master..SysDatabases ORDER BY Name
+3.获取所有表名
+SELECT Name FROM DatabaseName..SysObjects Where XType='U' ORDER BY Name
+XType='U':表示所有用户表;
+XType='S':表示所有系统表;
+SELECT name FROM sysobjects WHERE type = 'U' AND sysstat = '83'
+注意：一般情况只需要type = 'U'，但有时候会有系统表混在其中（不知道什么原因），加上后面一句后就能删除这些系统表了
+4.获取所有字段名:
+(1)、SELECT Name FROM SysColumns WHERE id=Object_Id('TableName')
+(2)、SELECT syscolumns.name,systypes.name,syscolumns.isnullable,syscolumns.length FROM syscolumns, systypes WHERE syscolumns.xusertype = systypes.xusertype AND "syscolumns.id = object_id('tableName')
+       注意点：
+     （a）这里为了重点突出某些重要内容，选取了其中几项信息输出。
+     （b）syscolumns表中只含有数据类型编号，要获取完整的名字需要从systypes表中找，一般用户使用的数据类型用xusertype对应比较好，不会出现一对多的情况。
+     （c）syscolumns.length得到的是物理内存的长度，所以nvarchar和varchar等类型在数据库中的显示是这个的一半。
+5.获取数据库所有类型
+select name from systypes 
+6.获取主键字段
+SELECT  name FROM SysColumns WHERE id=Object_Id('表名') and colid=(select top 1 keyno from sysindexkeys where id=Object_Id('表名'))
+7.得到表中主键所包含的列名
+SELECT syscolumns.name FROM syscolumns,sysobjects,sysindexes,sysindexkeys WHERE syscolumns.id = object_id('tablename') AND sysobjects.xtype = 'PK' AND sysobjects.parent_obj = syscolumns.id AND sysindexes.id = syscolumns.id AND sysobjects.name = sysindexes.name AND sysindexkeys.id = syscolumns.id AND sysindexkeys.indid = sysindexes.indid AND syscolumns.colid = sysindexkeys.colid
+注意：这是在4张系统表中寻找的，关系比较复杂，大致可以表示为：
+syscolumns中存有表中的列信息和表id，sysobjects表中存有主键名字（即PK_Table类似）和表id，sysindexes中存 有主键名字和表id和index编号，sysindexkeys中存有表id和index编号和列编号，一项一项对应起来后就能找到列名了。
