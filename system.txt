@@ -28,9 +28,6 @@ slmgr /ato
 查询或清除DNS：ipconfig /displaydns | /flushdns
 按住Shift并右击鼠标，选择在当前目录打开命令窗口
 
-VScode按'!+Tab'无法自动生成HTML模板问题：
-使用新的命令：以前是!+Tab，现在把叹号改成html:5，这个只有在最新版的VSCode中才有的更改，以前的版本还是继续使用!+Tab哦！
-
 什么是REST API?
 一种软件架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。
 原则条件：
@@ -48,17 +45,6 @@ The CTO must be as technical as required to validate the vision and the culture
 Beyond this, the CTO is (or should be) largely outward facing - the CTO should understand the relationship between the technology and the larger world
 As a company grows and expands, the CTO will be at a crossroads : become the VP of Engineering and hire a CTO, or remain the CTO and hire a VP of Engineering
 
-#什么是 GPU 加速计算？
-GPU 加速计算是指同时利用图形处理器 (GPU) 和 CPU，加快科学、分析、工程、消费和企业应用程序的运行速度。GPU 加速器于 2007 年由 NVIDIA? 率先推出，现已在世界各地为政府实验室、高校、公司以及中小型企业的高能效数据中心提供支持。GPU 能够使从汽车、手机和平板电脑到无人机和机器人等平台的应用程序加速运行.
-#GPU 如何加快软件应用程序的运行速度
-GPU 加速计算可以提供非凡的应用程序性能，能将应用程序计算密集部分的工作负载转移到 GPU，同时仍由 CPU 运行其余程序代码。从用户的角度来看，应用程序的运行速度明显加快.
-#GPU 与 CPU 性能比较
-理解 GPU 和 CPU 之间区别的一种简单方式是比较它们如何处理任务。CPU 由专为顺序串行处理而优化的几个核心组成，而 GPU 则拥有一个由数以千计的更小、更高效的核心（专为同时处理多重任务而设计）组成的大规模并行计算架构。
-
-SIM USIM（Micro-SIM） NANO-SIM
-
-cache 是为了弥补高速设备和低速设备的鸿沟而引入的中间层，最终起到**加快访问速度**的作用。而 buffer 的主要目的进行流量整形，把突发的大数量较小规模的 I/O 整理成平稳的小数量较大规模的 I/O，以**减少响应次数**（比如从网上下电影，你不能下一点点数据就写一下硬盘，而是积攒一定量的数据以后一整块一起写，不然硬盘都要被你玩坏了）。
-
 公共DNS
 114DNS  114.114.114.114    114.114.115.115
 谷歌DNS 8.8.8.8    8.8.4.4
@@ -66,14 +52,9 @@ cache 是为了弥补高速设备和低速设备的鸿沟而引入的中间层�
 阿里DNS 223.5.5.5    223.6.6.6
 百度DNS 180.76.76.76
 中华电信 168.95.1.1    168.95.192.1
-港服的    202.238.95.24    202.238.95.26
-棒子的    168.126.63.1    168.126.63.2
+港服的  202.238.95.24    202.238.95.26
+棒子的  168.126.63.1    168.126.63.2
 OpenDNS 208.67.220.220    208.67.222.222
-ping 114.114.114.114
-ping 180.76.76.76
-ping 223.5.5.5
-ping 119.29.29.29
-ping 8.8.8.8
 
 winsock是Windows网络编程接口，winsock工作在应用层，它提供与底层传输协议无关的高层数据传输编程接口 netsh winsock reset 是把它恢复到默认状态。
 netsh winsock reset命令，作用是重置 Winsock 目录。
@@ -92,6 +73,9 @@ CSV即Comma Separate Values，这种文件格式经常用来作为不同程序�
 字段中如果有双引号，该字段必须用双引号括起来
 第一条记录，可以是字段名
 
+VScode按'!+Tab'无法自动生成HTML模板问题：
+使用新的命令：以前是!+Tab，现在把叹号改成html:5，这个只有在最新版的VSCode中才有的更改，以前的版本还是继续使用!+Tab哦！
+
 notepad++
 折叠所有层次 Alt+0
 展开所有层次 Alt+Shift+0
@@ -99,19 +83,6 @@ notepad++
 展开当前层次 Ctrl+Alt+Shift+F
 变大写 Ctrl+Shift+u
 变小写 Ctrl+u
-
-版本	Windows 10 专业教育版
-版本号	21H2
-安装日期	‎20/‎12/‎04
-操作系统内部版本	19044.2251
-体验	Windows Feature Experience Pack 120.2212.4180.0
-设备名称	DESKTOP-TMTQBP9
-处理器	Intel(R) Core(TM) i5-10600KF CPU @ 4.10GHz   4.10 GHz
-机带 RAM	8.00 GB
-设备 ID	3C4136C3-3992-49E1-B6CD-6DD92ECB3AFC
-产品 ID	00378-40000-00001-AA309
-系统类型	64 位操作系统, 基于 x64 的处理器
-笔和触控	没有可用于此显示器的笔或触控输入
 
 smartphone:
 Prisma，图片处理App。Prisma通过人工智能把你手机中那些普通的照片模仿出著名艺术家画作的风格。
