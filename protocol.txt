@@ -54,14 +54,15 @@ NTP是用来使计算机时间同步化的一种协议，全称是Network Time P
 公共时间服务
 阿里OPS团队为互联网提供了公共的时间同步服务，服务域名为：time.aliyun.com
 
-net     socket
-FTP     21
-SFTP	22      安全文件传输协议
-TELNET	23
-SMTP	25
-DNS     53
-TFTP 	69      简单文件传输协议
-HTTP	80/8080
-SNMP	161
-HTTPS	443
-RIP     520
+protocol     socket
+FTP          21      主动模式数据端口应该为20
+SFTP	     22      安全文件传输协议
+TELNET	     23
+SMTP	     25
+DNS          53      UDP
+TFTP 	     69      简单文件传输协议
+HTTP	     80/8080
+NTP          123     UDP
+SNMP	     161
+HTTPS	     443
+RIP          520
