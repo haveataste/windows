@@ -16,12 +16,23 @@ win10锁屏画报路径：C:\Users\%username%\AppData\Local\Packages\Microsoft.W
 Internet Explorer 11（脱机安装程序）
 https://support.microsoft.com/zh-cn/windows/%E4%B8%8B%E8%BD%BD-internet-explorer-11-%E8%84%B1%E6%9C%BA%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F-99d492a1-3a62-077b-c476-cf028aff9a7f
 .NET Framework | Free official downloads
-https://dotnet.microsoft.com/download/dotnet-framework 
+https://dotnet.microsoft.com/download/dotnet-framework
 
 密钥管理服务 (KMS) 客户端激活和产品密钥：https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
 windows 10激活：
 slmgr /skms kms.03k.org
-slmgr /ato    
+slmgr /ato
+从注册表中清除产品密钥信息：slmgr.vbs -cpky
+卸载当前产品密匙：slmgr.vbs -upk
+安装产品密钥：slmgr.vbs -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+安装OEM证书方法：slmgr.vbs -ilc x:\xxx.XRM-MS
+设置KMS服务器IP地址及端口：slmgr.vbs /skms zh.us.to
+清除KMS服务器名和端口号并设为初始状态：slmgr.vbs /ckms
+尝试在线激活：slmgr.vbs /ato
+查看当前系统是否永久激活、当前许可证状态的截止日期：slmgr.vbs -xpr
+查看产品密钥及证书信息：slmgr.vbs -dli
+查看许可证详细信息：slmgr.vbs -dlv
+重置计算机的授权状态（去除水印）：slmgr.vbs -rearm
 
 查看应用程序的启动参数：Win+R cmd --> wmic --> process
 打开控制面板：Win+R control
@@ -31,9 +42,9 @@ slmgr /ato
 Windows Service 是一种可随 Windows 操作系统启动而启动的，在后台运行的，通常不和用户产生交互的程序。它无法通过双击来运行，类似于 Unix 守护进程（daemon processes），当用户注销时它也不会停止。
 Windows 服务由三部分组成：1.一个服务可执行文件；2.一个服务控制程序(SCP)；3.服务控制管理器(SCM)，负责在 HKLM\SYSTEM\CurrentControlSet\Services 下创建服务键值。用户可通过 SCP 控制服务的启动、停止、暂停等，SCP 会通过 SCM 调用服务程序。
 Window 标准的exe可执行程序通常有一个用户界面，Console或GUI，通常由用户来启动或停止。
-Windows服务是运行在windows后台指定用户下（默认System）的应用程序，它没有标准的UI界面，相比标准的EXE程序，Windows服务是在服务开始的时候创建，而在服务结束的时候销毁，而且可以设置服务是否与操作系统一起启动，一起关闭。它支持三种方式：1.自动方式 2.手动方式 3.禁用 。自动方式的时候，windows服务将在OS启动后自动启动运行，而手动方式则必须手工启动服务，禁用的情况下服务将不能被启动。另外标准的EXE默认使用的当前登录的用户，而windows服务则默认使用System用户，这在对系统资源访问的时候特别需要注意。 
+Windows服务是运行在windows后台指定用户下（默认System）的应用程序，它没有标准的UI界面，相比标准的EXE程序，Windows服务是在服务开始的时候创建，而在服务结束的时候销毁，而且可以设置服务是否与操作系统一起启动，一起关闭。它支持三种方式：1.自动方式 2.手动方式 3.禁用 。自动方式的时候，windows服务将在OS启动后自动启动运行，而手动方式则必须手工启动服务，禁用的情况下服务将不能被启动。另外标准的EXE默认使用的当前登录的用户，而windows服务则默认使用System用户，这在对系统资源访问的时候特别需要注意。
 
-EXE就是可执行文件,你可要双击它, 它就可以运行,而DLL是一个动态链接库文件,就是说,它不可以自己运行,它是须要一个程序的其它功能运行的时候,它才能运行。
+EXE就是可执行文件,你可要双击它, 它就可以运行,而DLL是一个动态链接库文件,就是说,它不可以自己运行,它是需要一个程序的其它功能运行的时候,它才能运行。
 EXE是带有程序入口（Main）的能被终端用户直接执行的应用程序，随着它的启动系统会产生一个相应的进程。
 DLL是动态链接库，不包含程序执行入口，不能被终端用户直接执行，本身需要附加到现有的进程中才可以运行。
 但两者都是基于PE格式，运行时由磁盘中的映像载入被调用者的内存或者共享空间中执行，包含程序的数据信息，只是EXE还包括程序的代码信息。
@@ -72,7 +83,7 @@ netsh winsock reset命令，作用是重置 Winsock 目录。
 如果一台机器上的Winsock协议配置有问题的话将会导致网络连接等问题，就需要用netsh winsock reset命令来重置Winsock目录借以恢复网络。
 这个命令可以重新初始化网络环境，以解决由于软件冲突、病毒原因造成的参数错误问题。 netsh是一个能够通过命令行操作几乎所有网络相关设置的接口，比如设置IP，DNS，网卡，无线网络等，Winsock是系统内部目录，Winsock是Windows网络编程接口，winsock工作在应用层，它提供与底层传输协议无关的高层数据传输编程接口，reset是对Winsock的重置操作。当执行完winsock的命令重启计算机后，需要重新配置IP。
 
-CSV即Comma Separate Values，这种文件格式经常用来作为不同程序之间的数据交互的格式。 
+CSV即Comma Separate Values，这种文件格式经常用来作为不同程序之间的数据交互的格式。
 具体文件格式：
 每条记录占一行
 以逗号为分隔符
