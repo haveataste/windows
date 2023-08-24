@@ -18,7 +18,7 @@ https://support.microsoft.com/zh-cn/windows/%E4%B8%8B%E8%BD%BD-internet-explorer
 .NET Framework | Free official downloads
 https://dotnet.microsoft.com/download/dotnet-framework
 
-密钥管理服务 (KMS) 客户端激活和产品密钥：https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
+密钥管理服务(KMS)客户端激活和产品密钥：https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
 windows 10激活：
 slmgr /skms kms.03k.org
 slmgr /ato
