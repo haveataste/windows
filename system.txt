@@ -34,6 +34,19 @@ slmgr /ato
 查看许可证详细信息：slmgr.vbs -dlv
 重置计算机的授权状态（去除水印）：slmgr.vbs -rearm
 
+Shift+F10
+diskpart
+detail disk
+list disk
+select disk 0
+list partition
+select partition 0
+delete partition
+create partition primary size=4096
+assign letter=G
+format fs=ntfs label="Soft" quick
+exit
+
 查看应用程序的启动参数：Win+R cmd --> wmic --> process
 打开控制面板：Win+R control
 查询或清除DNS：ipconfig /displaydns | /flushdns
