@@ -1,5 +1,5 @@
-内存：
-DDR (Double Data Rate) 双倍速率
+##内存：
+###DDR (Double Data Rate) 双倍速率
 DDR SDRAM 双倍速率同步动态随机存储器，人们习惯称为DDR，其中，SDRAM 是Synchronous Dynamic Random Access Memory的缩写，即同步动态随机存取存储器。
 DDR内存是在SDRAM内存基础上发展而来的，仍然沿用SDRAM生产体系，因此对于内存厂商而言，只需对制造普通SDRAM的设备稍加改进，即可实现DDR内存的生产，可有效的降低成本。
 DDR3L全称是DDR3 Low Voltage，也就是DDR3低电压版。标准的DDR3内存采用1.5V工作电压，而DDR3L内存则采用的是1.35V工作电压。DDR3L内存功耗相比DDR3标准内存低了15%，功耗的降低，自然会造成性能的下降。通过测试，DDR3L内存性能要低于DDR3内存，不过两者差距并不算大。DDR3L内存通常要比DDR3标准内存便宜一些。
